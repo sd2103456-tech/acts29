@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>우리 원만을 위한 졸업식 영상 | 엑츠29 영상제작</title>
+<meta name="description" content="아이 한 명 한 명이 주인공이 되는 우리 반만의 졸업 이야기. 엑츠29 영상제작 졸업영상 신청 페이지입니다.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="우리 원만을 위한 졸업식 영상 | 엑츠29 영상제작">
+<meta property="og:description" content="아이 한 명 한 명이 주인공이 되는 우리 반만의 졸업 이야기. 지금 신청해 보세요.">
+<meta property="og:image" content="https://sd2103456-tech.github.io/acts29/og_image.jpg">
+<meta property="og:url" content="https://sd2103456-tech.github.io/acts29/">
+<meta name="theme-color" content="#FFF8E7">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231F2A5C'/%3E%3Cpath d='M8 26 32 15l24 11-24 11z' fill='%23FFC83D'/%3E%3Cpath d='M18 32v10c0 4 7 7 14 7s14-3 14-7V32l-14 6z' fill='%23FFC83D'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root{
+    --cream:#FFF8E7; --cream2:#FFF1CF; --navy:#1F2A5C; --navy2:#2E3B78; --ink:#232842;
+    --yellow:#FFC83D; --yellow2:#FFE08A; --mint:#2BB8A3; --muted:#5B6180; --line:#E8DFC6;
+    --radius:20px; --shadow:0 4px 0 var(--navy);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+       line-height:1.6;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{max-width:640px;margin:0 auto;padding:0 20px}
+  /* top bar */
+  .topbar{position:sticky;top:0;z-index:20;background:rgba(255,248,231,.92);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid var(--line)}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+  .brand{display:flex;align-items:center;gap:8px;font-weight:800;color:var(--navy);text-decoration:none;font-size:17px}
+  .brand svg{width:28px;height:28px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:2.5px solid var(--navy);border-radius:999px;font-weight:800;
+       text-decoration:none;cursor:pointer;font-family:inherit;transition:transform .08s ease, box-shadow .08s ease}
+  .btn:active{transform:translateY(2px);box-shadow:0 2px 0 var(--navy)}
+  .btn-sm{padding:6px 14px;font-size:14px;background:var(--yellow);color:var(--navy);box-shadow:0 3px 0 var(--navy)}
+  .btn-lg{padding:15px 22px;font-size:18px;width:100%;background:var(--yellow);color:var(--navy);box-shadow:var(--shadow)}
+  .btn-ghost{background:#fff;color:var(--navy);box-shadow:var(--shadow)}
+  /* demo banner */
+  .demo{background:var(--navy);color:#fff;font-size:13px;text-align:center;padding:7px 12px}
+  .demo b{color:var(--yellow)}
+  /* hero */
+  .hero{padding:28px 20px 8px;text-align:center}
+  .pill{display:inline-block;background:var(--navy);color:#fff;font-weight:700;font-size:14px;padding:6px 14px;border-radius:999px}
+  .hero h1{margin:14px 0 6px;color:var(--navy);font-weight:900;letter-spacing:-0.02em;line-height:1.25}
+  .hero h1 .inst{display:block;font-size:24px;font-weight:800}
+  .hero h1 .main{display:inline-block;font-size:44px;position:relative;z-index:0}
+  .hero h1 .main:after{content:"";position:absolute;left:-4px;right:-4px;bottom:6px;height:14px;background:var(--yellow);z-index:-1;border-radius:6px}
+  .hero p.sub{margin:6px 0 18px;color:var(--muted);font-size:16px}
+  .video{position:relative;border:3px solid var(--navy);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:#000;aspect-ratio:16/9}
+  .video img,.video iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0}
+  .video .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(0deg,rgba(0,0,0,.35),rgba(0,0,0,0) 60%);cursor:pointer;border:0;padding:0}
+  .video .play span{display:flex;align-items:center;gap:8px;background:var(--yellow);color:var(--navy);font-weight:800;border:2.5px solid var(--navy);border-radius:999px;padding:10px 18px;box-shadow:0 3px 0 var(--navy);font-size:16px}
+  .video .play svg{width:18px;height:18px}
+  .collage{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .collage img{border:3px solid var(--navy);border-radius:14px;aspect-ratio:16/9;object-fit:cover;width:100%;box-shadow:0 3px 0 var(--navy)}
+  .note{font-size:13px;color:var(--muted);margin:12px 0 0}
+  .hero .ctas{display:grid;gap:12px;margin:20px 0 6px}
+  .skeleton{background:linear-gradient(90deg,#efe6cf 25%,#f7f0de 37%,#efe6cf 63%);background-size:400% 100%;animation:sk 1.2s ease infinite;border-radius:10px}
+  @keyframes sk{0%{background-position:100% 50%}100%{background-position:0 50%}}
+  /* sections */
+  section{padding:34px 0}
+  .sec-title{font-size:24px;font-weight:900;color:var(--navy);margin:0 0 6px;letter-spacing:-0.02em}
+  .sec-title .hl{background:linear-gradient(transparent 62%,var(--yellow) 62%)}
+  .sec-sub{color:var(--muted);margin:0 0 18px;font-size:15px}
+  .card{background:#fff;border:2.5px solid var(--navy);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px}
+  /* scenes */
+  .scenes{display:grid;gap:12px;counter-reset:sc}
+  .scene{display:flex;gap:12px;align-items:center;background:#fff;border:2px solid var(--navy);border-radius:16px;padding:10px 12px}
+  .scene .num{flex:0 0 34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
+  .scene b{color:var(--navy)}
+  .scene small{display:block;color:var(--muted);font-size:13px;line-height:1.45}
+  .scene-imgs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+  .scene-imgs figure{margin:0}
+  .scene-imgs img{border:2.5px solid var(--navy);border-radius:12px;aspect-ratio:16/9;object-fit:cover;width:100%;object-position:top}
+  .scene-imgs figcaption{font-size:12.5px;color:var(--muted);margin-top:4px;text-align:center}
+  /* steps */
+  .steps{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+  .steps li{display:flex;gap:14px;align-items:flex-start;background:#fff;border:2px solid var(--navy);border-radius:16px;padding:14px}
+  .steps .n{flex:0 0 auto;background:var(--yellow);color:var(--navy);font-weight:900;border:2px solid var(--navy);border-radius:10px;padding:2px 9px;font-size:14px;line-height:1.5}
+  .steps b{color:var(--navy);display:block}
+  .steps small{color:var(--muted);font-size:13.5px}
+  /* prepare */
+  .prep{display:grid;gap:12px}
+  .prep .item{background:#fff;border:2px solid var(--navy);border-radius:16px;padding:14px 16px}
+  .prep .item b{color:var(--navy);font-size:16.5px}
+  .prep .item b:before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--yellow);border:2px solid var(--navy);margin-right:8px;vertical-align:1px}
+  .prep .item small{display:block;color:var(--muted);font-size:13.5px;margin-top:2px}
+  .callout{margin-top:14px;background:var(--cream2);border:2px dashed var(--navy);border-radius:14px;padding:12px 14px;font-size:14px;color:var(--ink)}
+  /* price */
+  .price{text-align:center}
+  .price .amount{font-size:52px;font-weight:900;color:var(--navy);letter-spacing:-0.03em;line-height:1.1}
+  .price .amount small{font-size:22px;font-weight:800}
+  .price .basis{display:inline-block;margin-top:6px;background:var(--cream2);border-radius:999px;padding:4px 12px;font-weight:700;color:var(--navy);font-size:14.5px}
+  .price .meta{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .price .meta span{background:#fff;border:2px solid var(--navy);border-radius:12px;padding:6px 12px;font-weight:700;font-size:14px;color:var(--navy)}
+  .price p{color:var(--muted);font-size:13.5px;margin:12px 0 0}
+  /* form */
+  form .field{margin-bottom:16px}
+  label.lbl{display:block;font-weight:800;color:var(--navy);margin-bottom:6px;font-size:15px}
+  label.lbl .req{color:#E0523A;margin-left:2px}
+  label.lbl .opt{color:var(--muted);font-weight:600;font-size:13px;margin-left:4px}
+  input[type=text],input[type=tel],input[type=email],input[type=number],input[type=date],select,textarea{
+    width:100%;font:inherit;font-size:16px;color:var(--ink);background:#fff;border:2px solid #C9C2AE;border-radius:12px;padding:12px 14px;outline:none;-webkit-appearance:none;appearance:none}
+  select{background-image:linear-gradient(45deg,transparent 50%,var(--navy) 50%),linear-gradient(135deg,var(--navy) 50%,transparent 50%);
+         background-position:calc(100% - 20px) 52%,calc(100% - 14px) 52%;background-size:6px 6px,6px 6px;background-repeat:no-repeat;padding-right:36px}
+  input:focus,select:focus,textarea:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(255,200,61,.6)}
+  textarea{min-height:110px;resize:vertical}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .choices{display:grid;gap:8px}
+  .choices.inline{grid-template-columns:repeat(3,1fr)}
+  .choice{position:relative}
+  .choice input{position:absolute;opacity:0;pointer-events:none}
+  .choice span{display:block;text-align:center;border:2px solid #C9C2AE;border-radius:12px;padding:11px 8px;font-weight:700;background:#fff;cursor:pointer;color:var(--ink);font-size:15px}
+  .choice input:checked + span{border-color:var(--navy);background:var(--yellow2);color:var(--navy);box-shadow:0 2px 0 var(--navy)}
+  .choice input:focus-visible + span{box-shadow:0 0 0 3px rgba(255,200,61,.8)}
+  .agree{display:flex;gap:10px;align-items:flex-start;background:#fff;border:2px solid #C9C2AE;border-radius:12px;padding:12px;margin-bottom:10px}
+  .agree input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--navy);flex:0 0 auto}
+  .agree .t{font-size:14.5px}
+  .agree .t b{color:var(--navy)}
+  .agree button.more{background:none;border:0;padding:0;margin-left:4px;color:var(--navy2);text-decoration:underline;font:inherit;font-size:13px;cursor:pointer}
+  .err{color:#D2432F;font-size:13px;margin-top:5px;display:none}
+  .field.invalid input,.field.invalid select,.field.invalid textarea{border-color:#D2432F}
+  .field.invalid .err{display:block}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .form-note{font-size:13px;color:var(--muted);margin:10px 0 0;text-align:center}
+  .done{text-align:center;padding:28px 18px}
+  .done .big{font-size:24px;font-weight:900;color:var(--navy);margin:8px 0}
+  .done .check{width:64px;height:64px;margin:0 auto;border-radius:50%;background:var(--yellow);border:3px solid var(--navy);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow)}
+  .done dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;text-align:left;background:var(--cream);border-radius:12px;padding:12px 14px;margin:16px 0 0;font-size:14px}
+  .done dt{color:var(--muted)} .done dd{margin:0;font-weight:700;color:var(--navy)}
+  .sending{opacity:.6;pointer-events:none}
+  /* faq */
+  details{background:#fff;border:2px solid var(--navy);border-radius:16px;margin-bottom:10px;overflow:hidden}
+  summary{list-style:none;cursor:pointer;padding:14px 44px 14px 16px;font-weight:800;color:var(--navy);position:relative}
+  summary::-webkit-details-marker{display:none}
+  summary:after{content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:22px;font-weight:700}
+  details[open] summary:after{content:"–"}
+  details .a{padding:0 16px 14px;color:var(--ink);font-size:15px}
+  /* footer */
+  footer{background:var(--navy);color:#DDE2F5;padding:28px 0 110px;font-size:13.5px;margin-top:20px}
+  footer b{color:#fff}
+  footer a{color:#fff}
+  footer .links{margin-top:10px}
+  footer .links button{background:none;border:0;color:#fff;text-decoration:underline;font:inherit;cursor:pointer;padding:0}
+  /* sticky cta */
+  .sticky{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(255,248,231,.96);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+          display:flex;gap:10px;justify-content:center;transform:translateY(110%);transition:transform .25s ease}
+  .sticky.show{transform:none}
+  .sticky .btn{padding:12px 16px;font-size:16px}
+  .sticky .primary{flex:1;max-width:420px;background:var(--yellow);color:var(--navy);box-shadow:0 3px 0 var(--navy)}
+  .sticky .call{background:#fff;color:var(--navy);box-shadow:0 3px 0 var(--navy)}
+  /* modal */
+  .modal{position:fixed;inset:0;z-index:50;background:rgba(20,24,45,.55);display:none;align-items:flex-end;justify-content:center}
+  .modal.open{display:flex}
+  .modal .sheet{background:#fff;width:100%;max-width:640px;max-height:85vh;overflow:auto;border-radius:20px 20px 0 0;padding:22px 20px calc(22px + env(safe-area-inset-bottom))}
+  .modal h3{margin:0 0 10px;color:var(--navy)}
+  .modal table{width:100%;border-collapse:collapse;font-size:14px;margin:8px 0}
+  .modal th,.modal td{border:1px solid var(--line);padding:8px;text-align:left;vertical-align:top}
+  .modal th{background:var(--cream);width:30%;color:var(--navy)}
+  .modal .close{margin-top:14px}
+  @media (min-width:700px){
+    .hero h1 .main{font-size:54px}
+    .modal{align-items:center}
+    .modal .sheet{border-radius:20px}
+  }
+</style>
+</head>
+<body>
+
+<div id="demoBanner" class="demo" hidden><b>미리보기</b> · 아직 서버와 연결되지 않아 신청 내용은 저장되지 않아요.</div>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="엑츠29 영상제작">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#1F2A5C"/><path d="M8 26 32 15l24 11-24 11z" fill="#FFC83D"/><path d="M18 32v10c0 4 7 7 14 7s14-3 14-7V32l-14 6z" fill="#FFC83D"/></svg>
+      엑츠29 영상제작
+    </a>
+    <a class="btn btn-sm" href="#apply">신청하기</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="wrap hero">
+    <span class="pill" id="heroPill">엑츠29 영상제작</span>
+    <h1><span class="inst" id="heroInst">우리 원만을 위한</span><span class="main">졸업식 영상</span></h1>
+    <p class="sub" id="heroSub">아이 한 명 한 명이 주인공이 되는<br>우리 반만의 졸업 이야기</p>
+
+    <div id="heroMedia">
+      <div class="video skeleton" aria-hidden="true"></div>
+    </div>
+    <p class="note" id="heroNote">샘플 속 어린이와 사진은 AI로 만든 가상 이미지예요. 실제 영상은 원에서 보내 주신 사진으로 새로 만들어 드려요.</p>
+
+    <div class="ctas">
+      <a class="btn btn-lg" href="#apply" id="heroCta">우리 원 졸업영상 신청하기</a>
+      <a class="btn btn-lg btn-ghost" href="tel:01049272918">전화로 먼저 물어보기 010-4927-2918</a>
+    </div>
+  </div>
+
+  <!-- SCENES -->
+  <section id="scenes">
+    <div class="wrap">
+      <h2 class="sec-title"><span class="hl">이렇게 만들어 드려요</span></h2>
+      <p class="sec-sub">약 3분 분량, 일곱 장면으로 구성돼요.</p>
+      <div class="scenes">
+        <div class="scene"><span class="num">1</span><div><b>만화책 인트로</b><small>졸업을 앞둔 아이의 이야기로 문을 열어요</small></div></div>
+        <div class="scene"><span class="num">2</span><div><b id="sceneHello">“우리 원, 안녕!” 다 함께 인사</b><small>아이들이 다 함께 원 이름을 부르며 인사해요</small></div></div>
+        <div class="scene"><span class="num">3</span><div><b>원 이름 타이틀</b><small>2026학년도 졸업, 우리 원 이름으로 타이틀이 열려요</small></div></div>
+        <div class="scene"><span class="num">4</span><div><b>아이별 장래희망 소개</b><small>이름, 생일, 좋아하는 것, 장래희망을 한 명씩 소개해요</small></div></div>
+        <div class="scene"><span class="num">5</span><div><b>계절별 추억 앨범</b><small>봄·여름·가을·겨울 활동 사진을 앨범처럼 넘겨요</small></div></div>
+        <div class="scene"><span class="num">6</span><div><b>선생님의 축하 인사</b><small>원장·담임 선생님의 사진과 축하 메시지</small></div></div>
+        <div class="scene"><span class="num">7</span><div><b>졸업 축하 엔딩</b><small>모두의 졸업을 축하하며 마무리해요</small></div></div>
+      </div>
+      <div class="scene-imgs">
+        <figure><img src="scene_dream.jpg" alt="아이별 장래희망 소개 장면 예시" loading="lazy"><figcaption>④ 아이별 장래희망 소개</figcaption></figure>
+        <figure><img src="scene_memory.jpg" alt="계절별 추억 앨범 장면 예시" loading="lazy"><figcaption>⑤ 계절별 추억 앨범</figcaption></figure>
+        <figure><img src="scene_teacher.jpg" alt="선생님의 축하 인사 장면 예시" loading="lazy"><figcaption>⑥ 선생님의 축하 인사</figcaption></figure>
+        <figure><img src="scene_ending.jpg" alt="졸업 축하 엔딩 장면 예시" loading="lazy"><figcaption>⑦ 졸업 축하 엔딩</figcaption></figure>
+      </div>
+      <p class="note">장면 예시의 어린이와 사진은 AI로 만든 가상 이미지예요. 구성은 원에 맞게 바꿀 수 있어요.</p>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="wrap">
+      <h2 class="sec-title"><span class="hl">진행 순서</span></h2>
+      <p class="sec-sub">신청서만 남겨 주시면 나머지는 제가 안내해 드려요.</p>
+      <ol class="steps">
+        <li><span class="n">1</span><div><b>신청서 남기기</b><small>이 페이지 아래 신청서를 보내 주세요.</small></div></li>
+        <li><span class="n">2</span><div><b>전화 상담</b><small>인원, 졸업식 날짜, 원하시는 구성을 함께 정해요.</small></div></li>
+        <li><span class="n">3</span><div><b>자료 보내기</b><small>아이들 사진과 소개, 활동 사진을 안내해 드리는 방법으로 보내 주세요.</small></div></li>
+        <li><span class="n">4</span><div><b>제작 (1주일)</b><small>보내 주신 자료로 우리 원만의 영상을 만들어요.</small></div></li>
+        <li><span class="n">5</span><div><b>확인 · 수정 후 완성</b><small>완성본을 보시고 고칠 부분을 말씀해 주시면 반영해 드려요.</small></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- PREPARE -->
+  <section id="prepare">
+    <div class="wrap">
+      <h2 class="sec-title"><span class="hl">준비해 주실 자료</span></h2>
+      <div class="prep">
+        <div class="item"><b>아이들 사진 + 소개 내용</b><small>이름, 생일, MBTI, 부모님께 하고 싶은 말, 장래희망(필수) 등</small></div>
+        <div class="item"><b>활동 사진 · 추억 사진 20~30여 장</b><small>사진 제목은 지정해 주셔도, 안 해 주셔도 돼요.</small></div>
+        <div class="item"><b>원장 선생님 · 담임 선생님 사진</b><small>경우에 따라 영상으로 찍어서 보내 주셔도 돼요.</small></div>
+      </div>
+      <div class="callout">아이 사진은 <b>보호자 동의를 받은 사진만</b> 보내 주세요. 보내 주신 자료는 영상 제작에만 써요.</div>
+    </div>
+  </section>
+
+  <!-- PRICE -->
+  <section id="price">
+    <div class="wrap">
+      <h2 class="sec-title"><span class="hl">가격</span></h2>
+      <div class="card price">
+        <div class="amount">30만 <small>원</small></div>
+        <div class="basis">졸업 예정 어린이 20명 기준</div>
+        <div class="meta"><span>제작 기간 1주일</span><span>Full HD 영상 파일</span></div>
+        <p>인원이 다르거나 구성을 바꾸고 싶으시면 비용이 달라질 수 있어요. 상담 때 정확히 안내해 드려요.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLY -->
+  <section id="apply">
+    <div class="wrap">
+      <h2 class="sec-title"><span class="hl">졸업영상 신청서</span></h2>
+      <p class="sec-sub">1분이면 끝나요. 확인하는 대로 연락드릴게요.</p>
+
+      <div class="card" id="formCard">
+        <form id="applyForm" novalidate>
+          <div class="field">
+            <span class="lbl" id="typeLbl" style="display:block;font-weight:800;color:var(--navy);margin-bottom:6px">신청 내용<span class="req">*</span></span>
+            <div class="choices" role="radiogroup" aria-labelledby="typeLbl">
+              <label class="choice"><input type="radio" name="type" value="제작 신청" checked><span>졸업영상 제작을 신청할게요</span></label>
+              <label class="choice"><input type="radio" name="type" value="상담 먼저"><span>먼저 상담을 받고 싶어요</span></label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="lbl" for="instName">기관명<span class="req">*</span></label>
+            <input type="text" id="instName" name="instName" maxlength="40" placeholder="예) 햇살유치원" autocomplete="organization" required>
+            <div class="err">기관명을 적어 주세요.</div>
+          </div>
+
+          <div class="field">
+            <label class="lbl" for="area">지역<span class="opt">(선택)</span></label>
+            <input type="text" id="area" name="area" maxlength="30" placeholder="예) 세종시 / 대전 유성구">
+          </div>
+
+          <div class="row2">
+            <div class="field">
+              <label class="lbl" for="name">신청하시는 분<span class="req">*</span></label>
+              <input type="text" id="name" name="name" maxlength="20" placeholder="성함" autocomplete="name" required>
+              <div class="err">성함을 적어 주세요.</div>
+            </div>
+            <div class="field">
+              <label class="lbl" for="role">직책<span class="opt">(선택)</span></label>
+              <select id="role" name="role">
+                <option value="">선택</option><option>원장</option><option>원감</option><option>담임 교사</option><option>행정 담당</option><option>기타</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="lbl" for="phone">연락처<span class="req">*</span></label>
+            <input type="tel" id="phone" name="phone" inputmode="numeric" maxlength="13" placeholder="010-0000-0000" autocomplete="tel" required>
+            <div class="err">연락받으실 휴대폰 번호를 적어 주세요.</div>
+          </div>
+
+          <div class="field">
+            <label class="lbl" for="email">이메일<span class="opt">(선택)</span></label>
+            <input type="email" id="email" name="email" maxlength="60" placeholder="example@email.com" autocomplete="email">
+            <div class="err">이메일 형식을 확인해 주세요.</div>
+          </div>
+
+          <div class="row2">
+            <div class="field">
+              <label class="lbl" for="kids">졸업 예정 인원<span class="req">*</span></label>
+              <input type="number" id="kids" name="kids" min="1" max="300" inputmode="numeric" placeholder="예) 20">
+              <div class="err">인원을 적어 주세요.</div>
+            </div>
+            <div class="field">
+              <label class="lbl" for="ceremony">졸업식 날짜<span class="opt">(선택)</span></label>
+              <input type="date" id="ceremony" name="ceremony" min="2026-11-01" max="2027-12-31">
+            </div>
+          </div>
+
+          <div class="field">
+            <span class="lbl" id="contactLbl" style="display:block;font-weight:800;color:var(--navy);margin-bottom:6px">편한 연락 방법</span>
+            <div class="choices inline" role="radiogroup" aria-labelledby="contactLbl">
+              <label class="choice"><input type="radio" name="contact" value="전화" checked><span>전화</span></label>
+              <label class="choice"><input type="radio" name="contact" value="문자"><span>문자</span></label>
+              <label class="choice"><input type="radio" name="contact" value="이메일"><span>이메일</span></label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="lbl" for="message">요청 사항 · 궁금한 점<span class="opt">(선택)</span></label>
+            <textarea id="message" name="message" maxlength="1000" placeholder="예) 반이 두 개라 반별로 만들고 싶어요 / 졸업식 때 상영할 예정이에요"></textarea>
+          </div>
+
+          <div class="hp" aria-hidden="true"><label>홈페이지<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+
+          <div class="field" id="agreeField">
+            <label class="agree"><input type="checkbox" id="agreePrivacy" name="agreePrivacy">
+              <span class="t"><b>[필수] 개인정보 수집·이용에 동의해요.</b><button type="button" class="more" data-open="privacy">자세히</button><br>
+              <span style="color:var(--muted);font-size:13px">상담과 제작 안내를 위해 성함, 연락처 등을 받아요.</span></span></label>
+            <div class="err">개인정보 수집·이용에 동의해 주세요.</div>
+          </div>
+          <label class="agree"><input type="checkbox" id="agreeMarketing" name="agreeMarketing">
+            <span class="t">[선택] 새 소식과 이벤트 안내를 문자·이메일로 받을게요.<button type="button" class="more" data-open="marketing">자세히</button></span></label>
+
+          <button type="submit" class="btn btn-lg" id="submitBtn" style="margin-top:8px">신청서 보내기</button>
+          <p class="form-note">신청만으로는 비용이 들지 않아요. 상담 후에 진행 여부를 정하시면 돼요.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <h2 class="sec-title"><span class="hl">자주 묻는 질문</span></h2>
+      <details><summary>AI로 만드는 영상인가요?</summary>
+        <div class="a">편집과 마무리는 PD가 직접 해요. 장래희망 장면처럼 일부 장면은 아이 사진을 AI로 꾸며 만들 수 있는데, 이때는 원과 보호자의 동의를 받은 뒤에만 진행해요. 원하지 않으시면 AI 합성 없이 만들어 드려요.</div></details>
+      <details><summary>아이들 사진은 어떻게 보내나요?</summary>
+        <div class="a">신청 후 상담 때 안전하게 보내실 수 있는 방법을 안내해 드려요. 보호자 동의를 받은 사진만 보내 주세요.</div></details>
+      <details><summary>졸업식이 얼마 남지 않았는데 가능할까요?</summary>
+        <div class="a">자료를 받은 뒤 1주일이면 완성돼요. 신청서에 졸업식 날짜를 적어 주시면 일정에 맞춰 볼게요.</div></details>
+      <details><summary>인원이 20명보다 많거나 적으면요?</summary>
+        <div class="a">인원과 구성에 따라 비용이 달라질 수 있어요. 상담 때 정확한 금액을 안내해 드려요.</div></details>
+      <details><summary>완성본은 어떻게 받나요?</summary>
+        <div class="a">졸업식에서 바로 상영하실 수 있도록 Full HD(1920×1080) 영상 파일로 보내 드려요.</div></details>
+      <details><summary>수정할 수 있나요?</summary>
+        <div class="a">완성본을 보시고 고칠 부분을 말씀해 주시면 반영해 드려요.</div></details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <b>엑츠29 영상제작</b><br>
+    대표 임원규 · 사업자등록번호 232-13-01606<br>
+    전화 <a href="tel:01049272918">010-4927-2918</a> · 이메일 <a href="mailto:sd21034@hanmail.net">sd21034@hanmail.net</a><br>
+    인스타그램 <a href="https://www.instagram.com/acts29.video/" target="_blank" rel="noopener">@acts29.video</a>
+    <div class="links"><button type="button" data-open="privacy">개인정보 처리방침</button></div>
+    <div style="margin-top:10px;opacity:.75">샘플 영상과 장면 예시의 어린이와 사진은 AI로 만든 가상 이미지예요.</div>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky">
+  <a class="btn call" href="tel:01049272918" aria-label="전화 문의">전화 문의</a>
+  <a class="btn primary" href="#apply">졸업영상 신청하기</a>
+</div>
+
+<!-- privacy modal -->
+<div class="modal" id="modal-privacy" role="dialog" aria-modal="true" aria-labelledby="privTitle">
+  <div class="sheet">
+    <h3 id="privTitle">개인정보 수집·이용 안내</h3>
+    <table>
+      <tr><th>수집 항목</th><td>(필수) 기관명, 신청하시는 분 성함, 연락처, 졸업 예정 인원<br>(선택) 지역, 직책, 이메일, 졸업식 날짜, 요청 사항</td></tr>
+      <tr><th>이용 목적</th><td>졸업영상 제작 상담, 견적 안내, 제작 진행 연락</td></tr>
+      <tr><th>보유 기간</th><td>상담이 끝난 날부터 1년. 계약하신 경우 거래 기록은 관련 법령이 정한 기간 동안 보관해요.</td></tr>
+    </table>
+    <p style="font-size:14px">동의하지 않으셔도 되지만, 동의하지 않으시면 신청서를 받을 수 없어요. 전화(010-4927-2918)로 문의하실 수는 있어요.</p>
+    <p style="font-size:14px">개인정보 담당: 엑츠29 영상제작 임원규 (010-4927-2918, sd21034@hanmail.net). 열람·정정·삭제를 원하시면 언제든 연락 주세요.</p>
+    <button type="button" class="btn btn-lg close" data-close>확인</button>
+  </div>
+</div>
+<div class="modal" id="modal-marketing" role="dialog" aria-modal="true" aria-labelledby="mktTitle">
+  <div class="sheet">
+    <h3 id="mktTitle">새 소식·이벤트 안내 수신 (선택)</h3>
+    <table>
+      <tr><th>받는 내용</th><td>새 영상 상품, 할인·이벤트 소식</td></tr>
+      <tr><th>받는 방법</th><td>문자, 이메일 (적어 주신 연락처로)</td></tr>
+      <tr><th>보유 기간</th><td>동의를 거두실 때까지</td></tr>
+    </table>
+    <p style="font-size:14px">동의하지 않으셔도 신청과 상담에는 아무 영향이 없어요. 받기를 원하지 않으시면 언제든 연락 주세요.</p>
+    <button type="button" class="btn btn-lg close" data-close>확인</button>
+  </div>
+</div>
+
+<script>
+/* ===== 설정 ===== */
+const CONFIG = {
+  // Google Apps Script 웹앱 주소를 넣으면 실제로 저장돼요. 비워 두면 미리보기 모드(저장 안 됨).
+  API_URL: 'https://script.google.com/macros/s/AKfycbzAWslxuweHeCM-aKQawHyINVarYr0K7LLve2A0jsR0TO1IVqVFwdqPUc5aUYPslo2c/exec',
+  DEMO_DATA: 'demo/institutions.json',
+  PHONE: '010-4927-2918'
+};
+
+const $ = (s, el = document) => el.querySelector(s);
+const params = new URLSearchParams(location.search);
+const CODE = (params.get('c') || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 10);
+let INST = null;
+
+function particle(word, withJong, without) {
+  const c = word.charCodeAt(word.length - 1);
+  if (c < 0xAC00 || c > 0xD7A3) return withJong;
+  return ((c - 0xAC00) % 28) ? withJong : without;
+}
+function esc(s) { return String(s).replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m])); }
+
+async function lookupInstitution(code) {
+  if (!code) return null;
+  try {
+    if (CONFIG.API_URL) {
+      const r = await fetch(CONFIG.API_URL + '?action=inst&code=' + encodeURIComponent(code));
+      const j = await r.json();
+      return j && j.ok ? j : null;
+    }
+    const r = await fetch(CONFIG.DEMO_DATA, { cache: 'no-store' });
+    const list = await r.json();
+    return list.find(x => x.code === code) || null;
+  } catch (e) { return null; }
+}
+
+function renderVideo(videoId, title) {
+  const thumb = `https://i.ytimg.com/vi/${encodeURIComponent(videoId)}/hqdefault.jpg`;
+  return `<div class="video">
+      <img src="${thumb}" alt="${esc(title)} 샘플 영상 미리보기">
+      <button class="play" type="button" aria-label="샘플 영상 재생" data-vid="${esc(videoId)}">
+        <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16l13-8z" fill="#1F2A5C"/></svg>샘플 영상 보기</span>
+      </button></div>`;
+}
+function renderCollage() {
+  return `<div class="collage">
+      <img src="scene_dream.jpg" alt="아이별 장래희망 소개 장면 예시">
+      <img src="scene_ending.jpg" alt="졸업 축하 엔딩 장면 예시">
+      <img src="scene_memory.jpg" alt="계절별 추억 앨범 장면 예시">
+      <img src="scene_teacher.jpg" alt="선생님의 축하 인사 장면 예시">
+    </div>`;
+}
+
+async function initHero() {
+  if (!CONFIG.API_URL) $('#demoBanner').hidden = false;
+  INST = await lookupInstitution(CODE);
+  const media = $('#heroMedia');
+  if (INST) {
+    const nm = INST.name;
+    document.title = `${nm}${particle(nm, '을', '를')} 위한 졸업식 영상 | 엑츠29 영상제작`;
+    $('#heroPill').textContent = `${nm} 원장님께`;
+    $('#heroInst').textContent = `${nm}${particle(nm, '을', '를')} 위한`;
+    $('#heroSub').innerHTML = '보내 드린 홍보지의 샘플 영상이에요.<br>우리 원 아이들 사진으로 새로 만들어 드려요.';
+    $('#heroCta').textContent = `${nm} 졸업영상 신청하기`;
+    $('#sceneHello').textContent = `“${nm}, 안녕!” 다 함께 인사`;
+    $('#instName').value = nm;
+    if (INST.area) $('#area').value = INST.area;
+    media.innerHTML = INST.videoId ? renderVideo(INST.videoId, nm) : renderCollage();
+    if (!INST.videoId) $('#heroNote').textContent = '우리 원 샘플 영상은 준비 중이에요. 아래 장면 예시를 먼저 봐 주세요. 예시 속 어린이와 사진은 AI로 만든 가상 이미지예요.';
+  } else {
+    media.innerHTML = renderCollage();
+    $('#heroNote').textContent = '홍보지의 QR코드로 들어오시면 우리 원 샘플 영상을 바로 보실 수 있어요. 예시 속 어린이와 사진은 AI로 만든 가상 이미지예요.';
+  }
+}
+
+document.addEventListener('click', e => {
+  const play = e.target.closest('.play');
+  if (play) {
+    const vid = play.dataset.vid;
+    const box = play.parentElement;
+    box.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(vid)}?autoplay=1&rel=0&playsinline=1" title="샘플 영상" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+    return;
+  }
+  const open = e.target.closest('[data-open]');
+  if (open) { e.preventDefault(); $('#modal-' + open.dataset.open).classList.add('open'); return; }
+  if (e.target.closest('[data-close]') || e.target.classList.contains('modal')) {
+    document.querySelectorAll('.modal.open').forEach(m => m.classList.remove('open'));
+  }
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') document.querySelectorAll('.modal.open').forEach(m => m.classList.remove('open')); });
+
+/* 연락처 자동 하이픈 */
+$('#phone').addEventListener('input', e => {
+  const d = e.target.value.replace(/\D/g, '').slice(0, 11);
+  e.target.value = d.length < 4 ? d : d.length < 8 ? `${d.slice(0, 3)}-${d.slice(3)}` : `${d.slice(0, 3)}-${d.slice(3, d.length - 4)}-${d.slice(-4)}`;
+});
+
+/* 아래 고정 버튼: 첫 화면을 지나고, 신청서가 안 보일 때만 */
+const sticky = $('#sticky');
+const applySec = $('#apply');
+let pastHero = false, formVisible = false;
+const upd = () => sticky.classList.toggle('show', pastHero && !formVisible);
+new IntersectionObserver(([en]) => { pastHero = !en.isIntersecting; upd(); }, { threshold: 0 }).observe($('.hero .ctas'));
+new IntersectionObserver(([en]) => { formVisible = en.isIntersecting; upd(); }, { threshold: 0.05 }).observe(applySec);
+
+/* 신청서 */
+function setInvalid(id, bad) { const f = document.getElementById(id).closest('.field'); f.classList.toggle('invalid', bad); return bad; }
+function validate(fd) {
+  let firstBad = null;
+  const chk = (id, bad) => { if (setInvalid(id, bad) && !firstBad) firstBad = id; };
+  chk('instName', !fd.instName.trim());
+  chk('name', !fd.name.trim());
+  chk('phone', !/^01[016789]-?\d{3,4}-?\d{4}$/.test(fd.phone.trim()));
+  chk('email', !!fd.email.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fd.email.trim()));
+  chk('kids', !(Number(fd.kids) >= 1 && Number(fd.kids) <= 300));
+  const agreeBad = !fd.agreePrivacy;
+  $('#agreeField').classList.toggle('invalid', agreeBad);
+  if (agreeBad && !firstBad) firstBad = 'agreePrivacy';
+  if (firstBad) { const el = document.getElementById(firstBad); el.scrollIntoView({ behavior: 'smooth', block: 'center' }); el.focus({ preventScroll: true }); }
+  return !firstBad;
+}
+$('#applyForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const f = e.target;
+  const fd = {
+    type: f.type.value, instName: f.instName.value, area: f.area.value, name: f.name.value, role: f.role.value,
+    phone: f.phone.value, email: f.email.value, kids: f.kids.value, ceremony: f.ceremony.value, contact: f.contact.value,
+    message: f.message.value, agreePrivacy: f.agreePrivacy.checked, agreeMarketing: f.agreeMarketing.checked, website: f.website.value
+  };
+  if (!validate(fd)) return;
+  const payload = { ...fd, code: CODE, matchedInst: INST ? INST.name : '', page: location.href, ua: navigator.userAgent, sentAt: new Date().toISOString() };
+  const btn = $('#submitBtn'); btn.textContent = '보내는 중…'; f.classList.add('sending');
+  let ok = false;
+  try {
+    if (CONFIG.API_URL) {
+      const r = await fetch(CONFIG.API_URL, { method: 'POST', body: JSON.stringify(payload) });
+      const j = await r.json(); ok = !!(j && j.ok);
+    } else { await new Promise(r => setTimeout(r, 700)); ok = true; console.log('[미리보기] 보낼 내용', payload); }
+  } catch (err) { ok = false; }
+  if (ok) {
+    $('#formCard').innerHTML = `<div class="done">
+        <div class="check"><svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7" fill="none" stroke="#1F2A5C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="big">신청서가 접수됐어요</div>
+        <p>확인하는 대로 ${esc(fd.contact)}로 연락드릴게요.<br>급하시면 <a href="tel:01049272918"><b>010-4927-2918</b></a>로 전화 주세요.</p>
+        <dl><dt>기관명</dt><dd>${esc(fd.instName)}</dd><dt>신청하신 분</dt><dd>${esc(fd.name)}${fd.role ? ' ' + esc(fd.role) : ''}</dd>
+            <dt>연락처</dt><dd>${esc(fd.phone)}</dd><dt>졸업 예정 인원</dt><dd>${esc(fd.kids)}명</dd>${fd.ceremony ? `<dt>졸업식</dt><dd>${esc(fd.ceremony)}</dd>` : ''}</dl>
+        ${CONFIG.API_URL ? '' : '<p class="note">미리보기 모드라 실제로 저장되지는 않았어요.</p>'}
+      </div>`;
+    $('#formCard').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  } else {
+    btn.textContent = '신청서 보내기'; f.classList.remove('sending');
+    alert('보내는 중에 문제가 생겼어요. 잠시 후 다시 시도하시거나 010-4927-2918로 전화 주세요.');
+  }
+});
+['instName', 'name', 'phone', 'email', 'kids'].forEach(id => document.getElementById(id).addEventListener('input', () => setInvalid(id, false)));
+$('#agreePrivacy').addEventListener('change', () => $('#agreeField').classList.remove('invalid'));
+
+initHero();
+</script>
+</body>
+</html>
