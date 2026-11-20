@@ -475,6 +475,38 @@ function renderCollage() {
     </div>`;
 }
 
+
+/* ===== 학교(초등학교) 코드로 들어온 경우: 문구를 학교용으로 바꿈 (2026-11 충북 초등학교 홍보지) ===== */
+function isSchoolName(nm) { return /초등학교|분교장|중학교|고등학교/.test(nm || ''); }
+function applySchoolMode(nm) {
+  const set = (sel, html) => { const el = $(sel); if (el) el.innerHTML = html; };
+  const txt = (sel, t) => { const el = $(sel); if (el) el.textContent = t; };
+  txt('#heroPill', `${nm} 선생님께`);
+  set('#heroSub', '보내 드린 홍보지의 샘플 영상이에요.<br>우리 학교 학생들 사진으로 새로 만들어 드려요.');
+  txt('#heroNote', '샘플 속 학생과 사진은 AI로 만든 가상 이미지예요. 실제 영상은 학교에서 보내 주신 사진으로 새로 만들어 드려요.');
+  txt('#scenes .sec-sub', '약 2~3분 분량, 일곱 장면으로 구성돼요.');
+  const sc = [['만화책 인트로', '만화책을 펼치며 졸업 이야기의 문을 열어요'], ['1학년부터 6학년까지', '입학부터 졸업까지 6년을 만화 여섯 칸에 담아요'],
+    ['학교 이름 타이틀', '2026학년도 졸업, 학교 이름으로 타이틀이 열려요'], ['학생별 성장 소개', '1학년 때와 지금 사진, 별명·MBTI·한 줄 소개'],
+    ['6학년의 기록', '한 해의 활동 사진을 사진첩처럼 넘겨요'], ['선생님의 편지', '담임 선생님의 축하 편지를 담아요'], ['졸업 축하 엔딩', '모두의 졸업을 축하하며 마무리해요']];
+  set('#scenes .scenes', sc.map((x, i) => `<div class="scene"><span class="num">${i + 1}</span><div><b>${x[0]}</b><small>${x[1]}</small></div></div>`).join(''));
+  const imgs = $('#scenes .scene-imgs'); if (imgs) imgs.style.display = 'none';
+  txt('#scenes .note', '샘플 속 학생과 사진은 AI로 만든 가상 이미지예요. 구성은 학교에 맞게 바꿀 수 있어요.');
+  txt('#process .steps li:nth-child(3) small', '학생 사진과 소개, 활동 사진을 안내해 드리는 방법으로 보내 주세요.');
+  txt('#process .steps li:nth-child(4) small', '보내 주신 자료로 우리 학교만의 영상을 만들어요.');
+  set('#prepare .prep', [['학생 사진 + 소개 내용', '1학년 때 사진과 지금 사진, 이름, 별명, MBTI, 한 줄 소개 등'],
+    ['활동 사진 · 추억 사진 20~30여 장', '사진 제목은 지정해 주셔도, 안 해 주셔도 돼요.'],
+    ['담임 선생님 사진과 편지', '편지는 글로 주셔도, 영상으로 찍어 보내 주셔도 돼요.']].map(x => `<div class="item"><b>${x[0]}</b><small>${x[1]}</small></div>`).join(''));
+  set('#prepare .callout', '학생 사진은 <b>보호자 동의를 받은 사진만</b> 보내 주세요. 보내 주신 자료는 영상 제작에만 써요.');
+  txt('#price .basis', '졸업 예정 학생 20명 기준');
+  const inm = $('#instName'); if (inm) inm.placeholder = '예) 햇살초등학교';
+  const ar = $('#area'); if (ar) ar.placeholder = '예) 충북 괴산군';
+  const role = $('#role'); if (role) role.innerHTML = '<option value="">선택</option><option>교장</option><option>교감</option><option>6학년 담임</option><option>교사</option><option>행정실</option><option>기타</option>';
+  const faq = document.querySelectorAll('#faq details');
+  if (faq[0]) faq[0].querySelector('.a').textContent = '편집과 마무리는 PD가 직접 해요. 일부 장면은 학생 사진을 AI로 꾸며 만들 수 있는데, 이때는 학교와 보호자의 동의를 받은 뒤에만 진행해요. 원하지 않으시면 AI 합성 없이 만들어 드려요.';
+  if (faq[1]) { faq[1].querySelector('summary').textContent = '학생 사진은 어떻게 보내나요?'; faq[1].querySelector('.a').textContent = '신청 후 상담 때 안전하게 보내실 수 있는 방법을 안내해 드려요. 보호자 동의를 받은 사진만 보내 주세요.'; }
+  const fn = document.querySelector('footer .wrap > div[style]'); if (fn) fn.textContent = '샘플 영상의 학생과 사진은 AI로 만든 가상 이미지예요.';
+}
+
 async function initHero() {
   if (!CONFIG.API_URL) $('#demoBanner').hidden = false;
   INST = await lookupInstitution(CODE);
@@ -491,6 +523,7 @@ async function initHero() {
     if (INST.area) $('#area').value = INST.area;
     media.innerHTML = INST.videoId ? renderVideo(INST.videoId, nm) : renderCollage();
     if (!INST.videoId) $('#heroNote').textContent = '우리 원 샘플 영상은 준비 중이에요. 아래 장면 예시를 먼저 봐 주세요. 예시 속 어린이와 사진은 AI로 만든 가상 이미지예요.';
+    if (isSchoolName(nm)) applySchoolMode(nm);
   } else {
     media.innerHTML = renderCollage();
     $('#heroNote').textContent = '홍보지의 QR코드로 들어오시면 우리 원 샘플 영상을 바로 보실 수 있어요. 예시 속 어린이와 사진은 AI로 만든 가상 이미지예요.';
